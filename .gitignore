@@ -1,0 +1,15 @@
+# Terraform
+**/.terraform/
+*.tfstate
+*.tfstate.*
+.crash.log
+
+# Credentials
+**/keys/*.json
+
+# Python
+__pycache__/
+*.pyc
+
+# Docker volumes
+**/ny_taxi_postgres_data/
