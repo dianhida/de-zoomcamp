@@ -8,14 +8,14 @@ terraform {
 }
 
 provider "google" {
-  credentials = "./keys/my-creds.json"
-  project     = "speedy-method-485303-p9"
-  region      = "us-central1"
+  credentials = file(var.credentials)
+  project     = var.project
+  region      = var.region
 }
 
 resource "google_storage_bucket" "demo-terraform" {
-  name          = "speedy-method-485303-p9-demo-terraform"
-  location      = "US"
+  name          = var.gcs_bucket_name
+  location      = var.location
   force_destroy = true
 
   lifecycle_rule {
@@ -35,4 +35,10 @@ resource "google_storage_bucket" "demo-terraform" {
       type = "AbortIncompleteMultipartUpload"
     }
   }
+}
+
+# Create a dataset
+resource "google_bigquery_dataset" "demo_dataset" {
+  dataset_id = var.bq_dataset_name
+  location   = var.location
 }
