@@ -38,3 +38,4 @@ triggers:
     cron: "@daily"
     timezone: America/New_York
 
+Note: attempt to run the flow with the foreach loop but failed upon reading the extracted file inside the loop.
