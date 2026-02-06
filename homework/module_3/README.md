@@ -84,7 +84,7 @@ WHERE tpep_dropoff_datetime >= TIMESTAMP('2024-03-01')
 Estimation:
 Answer:
 Using non-partition: 310.24 MB
-Using partition: 28.83 MB
+Using partition: to be exact, it's 28.83 MB, but the answer only provide 26.84 MB
 
 ## Number 7: External Table
 Answer: GCP
