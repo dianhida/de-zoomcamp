@@ -15,3 +15,6 @@ __pycache__/
 
 # Docker volumes
 **/ny_taxi_postgres_data/
+
+# Parquet
+*.parquet
