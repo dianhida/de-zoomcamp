@@ -35,3 +35,10 @@ venv/
 **google_credentials.json
 *.json
 *.env
+.bruin.yml
+logs/runs
+logs/*.log
+__pycache__/
+*.py[cod]
+
+*.db
