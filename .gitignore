@@ -27,7 +27,7 @@ serving_dir
 **/logs/
 **/dbt_packages/
 
-
+venv
 venv/
 .venv/
 **/venv/
