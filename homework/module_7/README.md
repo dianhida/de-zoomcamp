@@ -59,38 +59,26 @@ LIMIT 3;
 
 ---
 
-### Question 5: User Interface
+### Question 5: Max Trips 
 
-- **On which local port does Spark’s UI (application dashboard) run?**
+postgres=# SELECT PULocationID, num_trips     
+FROM session_events_aggregated
+ORDER BY num_trips DESC
+LIMIT 5;
+ pulocationid | num_trips 
+--------------+-----------
+           74 |        82
+           74 |        76
+           74 |        72
+           74 |        72
+           74 |        72
+(5 rows)
 
-  - 80  
-  - 443  
-  - **4040**  
-  - 8080  
 
-**Answer:** **4040**
+**Answer:** **81**
 
-(Default port for the Spark application UI.)
+(Closest answer as I found always 82.)
 
 ---
 
 ### Question 6: Least frequent pickup location zone
-
-- Load the zone lookup data (e.g. into a temp view in Spark):
-
-```bash
-wget https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv
-```
-
-- Using the zone lookup and the Yellow November 2025 data, **what is the name of the LEAST frequent pickup location Zone?**
-
-  - Governor's Island/Ellis Island/Liberty Island  
-  - **Arden Heights**  
-  - Rikers Island  
-  - Jamaica Bay  
-
-*(If multiple answers are correct, select any.)*
-
-**Answer:** **Arden Heights**
-
-(From `least_frequent_pickup_zone_name(yellow_df, zones_df)` in this project.)
