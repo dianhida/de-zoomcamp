@@ -61,10 +61,13 @@ LIMIT 3;
 
 ### Question 5: Max Trips 
 
+```sql
 postgres=# SELECT PULocationID, num_trips     
 FROM session_events_aggregated
 ORDER BY num_trips DESC
 LIMIT 5;
+```
+```bash
  pulocationid | num_trips 
 --------------+-----------
            74 |        82
@@ -73,7 +76,7 @@ LIMIT 5;
            74 |        72
            74 |        72
 (5 rows)
-
+```
 
 **Answer:** **81**
 
@@ -81,4 +84,18 @@ LIMIT 5;
 
 ---
 
-### Question 6: Least frequent pickup location zone
+### Question 6: Largest tip
+```sql
+SELECT window_start, total_tip
+FROM hourly_tips
+ORDER BY total_tip DESC
+LIMIT 1;
+```
+```bash
+    window_start     |     total_tip     
+---------------------+-------------------
+ 2025-10-16 18:00:00 | 524.9599999999999
+(1 row)
+```
+
+**Answer:** **2025-10-16 18:00:00**
